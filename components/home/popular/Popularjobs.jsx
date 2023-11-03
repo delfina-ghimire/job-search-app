@@ -7,7 +7,6 @@ import {
   FlatList,
   ActivityIndicator,
 } from "react-native";
-
 import { COLORS, SIZES } from "../../../constants";
 import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 import styles from "./popularjobs.style";
@@ -20,7 +19,8 @@ const Popularjobs = () => {
     query: "React developer",
     num_pages: "1",
   });
-
+  const [selectedJob, useSelectedJob] = useState();
+  const handleCardPress = (item) => {};
   console.log(data);
   return (
     <View style={styles.container}>
@@ -42,8 +42,8 @@ const Popularjobs = () => {
             renderItem={({ item }) => (
               <PopularJobCard
                 item={item}
-                // selectedJob={selectedJob}
-                // handleCardPress={handleCardPress}
+                selectedJob={selectedJob}
+                handleCardPress={handleCardPress}
               />
             )}
             keyExtractor={(item) => item?.job_id}
