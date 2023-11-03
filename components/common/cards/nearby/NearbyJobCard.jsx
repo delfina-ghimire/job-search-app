@@ -4,7 +4,7 @@ import { checkImageURL } from "../../../../Utils";
 
 const NearbyJobCard = ({ job, handleNavigate }) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={() => handleNavigate}>
+    <TouchableOpacity style={styles.container} onPress={() => handleNavigate()}>
       <TouchableOpacity style={styles.logoContainer}>
         <Image
           source={{
@@ -22,12 +22,6 @@ const NearbyJobCard = ({ job, handleNavigate }) => {
           {job.job_title}
         </Text>
         <Text style={styles.jobType}> {job.job_employment_type}</Text>
-        {/* <View style={styles.infoWrapper}>
-          <Text style={styles.publisher(selectedJob, item)}>
-            {item?.job_publisher} -
-          </Text>
-          <Text style={styles.location}> {item.job_country}</Text>
-        </View> */}
       </View>
     </TouchableOpacity>
   );
